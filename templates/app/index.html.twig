@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    {% for quiz in quizzes %}
+        {{ quiz.name }}
+    {% endfor %}
+{% endblock %}
