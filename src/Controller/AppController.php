@@ -24,6 +24,19 @@ class AppController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/{idQuiz}", name="app_students")
+     */
+    public function students($idQuiz): Response
+    {
+        $repositoryQuiz = $this->getDoctrine()->getRepository(Quiz::class);
+
+        $quiz = $repositoryQuiz->find($idQuiz);
+
+        dump($quiz);
+        die;
+    }
+
      /**
      * @Route("/result", name="app_result")
      */
