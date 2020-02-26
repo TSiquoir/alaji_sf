@@ -3,7 +3,25 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+    <div class="container">
     {% for quiz in quizzes %}
         {{ quiz.name }}
     {% endfor %}
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
 {% endblock %}
