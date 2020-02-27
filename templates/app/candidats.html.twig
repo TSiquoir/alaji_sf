@@ -4,20 +4,19 @@
 
 {% block body %}
     <div class="container">
+        <h1>{{ quiz.name }}</h1>
 
         <table class="table table-striped">
             <thead>
             <tr>
-                    <th scope="col">Nom du quiz</th>
+                <th scope="col">Nom du cnadidat</th>
             </tr>
             </thead>
             <tbody>
-                {% for quiz in quizzes %}
+                {% for student in students %}
                     <tr>
                         <td>
-                            <a href="{{ path('app_students', {
-                                idQuiz: quiz.id
-                            }) }}">{{ quiz.name }}</a>
+                            <a href="">{{ quiz.name }}</a>
                         </td>
                     </tr>
                 {% endfor %}

@@ -1,0 +1,13 @@
+.form {
+    margin-top: 50vh; /* poussé de la moitié de hauteur de viewport */
+    transform: translateY(-50%);
+    
+    background-color: rgba(138, 195, 105, 0.308);
+    border-radius: 30px;
+    padding: 2em;
+
+}
+
+.btn_form {
+    margin-top: 20px;
+}
