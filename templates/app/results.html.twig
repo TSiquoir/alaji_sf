@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultats{% endblock %}
+
+{% block body %}
+    <div class="container con">
+        <h1>{{ quiz.name }}</h1>
+        <h2>{{ student.fullname }}</h2>
+        
+
+        <table class="table list">
+            <thead class="tab_head">
+            <tr>
+                <th class="tile" scope="col">Résultat du test écrit</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>
+                            {{ result.test }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <table class="table list">
+            <thead class="tab_head">
+            <tr>
+                <th class="tile" scope="col">Résultat du test oral</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>
+                            {{ result.test }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        
+
+    </div>
+{% endblock %}

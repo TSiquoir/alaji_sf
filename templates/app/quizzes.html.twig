@@ -1,23 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Questionnaires{% endblock %}
 
 {% block body %}
     <div class="container">
 
-        <table class="table table-striped">
-            <thead>
+        <table class="table list col-md-6 offset-3">
+            <thead class="tab_head">
             <tr>
-                    <th scope="col">Nom du quiz</th>
+                    <th scope="col">Liste des questionnaires</th>
             </tr>
             </thead>
             <tbody>
                 {% for quiz in quizzes %}
-                    <tr>
+                    <tr class="line">
                         <td>
-                            <a href="{{ path('app_students', {
-                                idQuiz: quiz.id
-                            }) }}">{{ quiz.name }}</a>
+                            <a href="{{ path('app_students', {idQuiz: quiz.id}) }}">{{ quiz.name }}</a>
                         </td>
                     </tr>
                 {% endfor %}

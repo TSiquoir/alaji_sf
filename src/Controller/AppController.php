@@ -42,15 +42,32 @@ class AppController extends AbstractController
     }
 
      /**
-     * @Route("/result", name="app_result")
+     * @Route("/quiz/{idQuiz}/student/{idStudent}", name="app_result")
      */
-    public function result(): Response
+    public function result($idQuiz, $idStudent): Response
     {
-        $repositoryResult = $this->getDoctrine()->getRepository(result::class);
-        $results = $repositoryResult->findAll();
+        $repositoryStudent = $this->getDoctrine()->getRepository(Student::class);
+        $student = $repositoryStudent->find($idStudent);
+
+        $repositoryQuiz = $this->getDoctrine()->getRepository(Quiz::class);
+        $quiz = $repositoryQuiz->find($idQuiz);
+
+        $repositoryResult = $this->getDoctrine()->getRepository(Result::class);
+        $results = [];
+
+        foreach ($quiz->getCriterias() as $criteria) {
+            $results[] = $repositoryResult->findOneBy([
+                'criteria' => $criteria,
+                'student' => $student,
+            ]);
+        }
+
+        dump($results);
 
         return $this->render('app/results.html.twig', [
             'results' => $results,
+            'student' => $student,
+            'quiz' => $quiz,
         ]);
     }
 }

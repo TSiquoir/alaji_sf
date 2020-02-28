@@ -7,8 +7,8 @@
         <h1>{{ quiz.name }}</h1>
         
 
-        <table class="table table-striped">
-            <thead>
+        <table class="table">
+            <thead class="tab_head">
             <tr>
                 <th scope="col">Nom du cnadidat</th>
             </tr>
@@ -17,7 +17,10 @@
                 {% for student in students %}
                     <tr>
                         <td>
-                            <a href="">{{ student.fullname }}</a>
+                            <a href="{{ path('app_result', {
+                                idQuiz: quiz.id,
+                                idStudent: student.id,
+                            }) }}">{{ student.fullname }}</a>
                         </td>
                     </tr>
                 {% endfor %}
