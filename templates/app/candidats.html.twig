@@ -5,6 +5,7 @@
 {% block body %}
     <div class="container">
         <h1>{{ quiz.name }}</h1>
+        
 
         <table class="table table-striped">
             <thead>
@@ -16,7 +17,7 @@
                 {% for student in students %}
                     <tr>
                         <td>
-                            <a href="">{{ quiz.name }}</a>
+                            <a href="">{{ student.fullname }}</a>
                         </td>
                     </tr>
                 {% endfor %}

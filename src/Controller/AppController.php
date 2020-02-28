@@ -32,7 +32,7 @@ class AppController extends AbstractController
         $repositoryQuiz = $this->getDoctrine()->getRepository(Quiz::class);
         $quiz = $repositoryQuiz->find($idQuiz);
 
-        $repositoryStudent = $this->getDoctrine()->getRepository(student::class);
+        $repositoryStudent = $this->getDoctrine()->getRepository(Student::class);
         $students = $repositoryStudent->findAll();
 
         return $this->render('app/candidats.html.twig', [
